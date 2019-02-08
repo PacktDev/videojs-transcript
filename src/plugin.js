@@ -34,10 +34,12 @@ const transcript = function (options) {
 
   });
 };
-if (videojs.registerPlugin) {
-    videojs.registerPlugin('transcript', transcript);
-}
-else {
-  videojs.plugin('transcript', transcript);
-}
 
+export default function registerPlugin(videojs){
+  if (videojs.registerPlugin) {
+      videojs.registerPlugin('transcript', transcript);
+  }
+  else {
+    videojs.plugin('transcript', transcript);
+  }
+}
