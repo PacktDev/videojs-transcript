@@ -1,5 +1,10 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = registerPlugin;
+
 var _video = require('video.js');
 
 var _video2 = _interopRequireDefault(_video);
@@ -48,8 +53,11 @@ var transcript = function transcript(options) {
     transcriptContainer.appendChild(_options.my.widget.el());
   });
 };
-if (_video2.default.registerPlugin) {
-  _video2.default.registerPlugin('transcript', transcript);
-} else {
-  _video2.default.plugin('transcript', transcript);
+
+function registerPlugin(videojs) {
+  if (videojs.registerPlugin) {
+    videojs.registerPlugin('transcript', transcript);
+  } else {
+    videojs.plugin('transcript', transcript);
+  }
 }

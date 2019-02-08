@@ -1,4 +1,4 @@
-/*! videojs-transcript - v0.8.0 - 2019-01-29
+/*! @packt/videojs-transcript - v0.9.0 - 2019-02-08
 * Copyright (c) 2019 Matthew Walsh; Licensed MIT */
 // requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
 // MIT license
@@ -324,7 +324,7 @@ var trackList = function (plugin) {
       for (i = 0; i < my.tracks.length; i++) {
         track = my.tracks[i];
         if (track.kind === 'captions' || track.kind === 'subtitles') {
-          if (my.player.options_.transcript.downloads) {
+          if (my.player.options_.transcript && my.player.options_.transcript.downloads) {
               track.download = my.player.options_.transcript.downloads[track.label]
           }
           validTracks.push(track);
@@ -441,10 +441,10 @@ var widget = function (plugin) {
     var line, i;
     var fragment = document.createDocumentFragment();
     // activeCues returns null when the track isn't loaded (for now?)
-    if (!track.activeCues || (track.cues && track.cues.length == 0)) {
+    if (!track || !track.activeCues || (track.cues && track.cues.length == 0)) {
       // If cues aren't loaded, set mode to hidden, wait, and try again.
       // But don't hide an active track. In that case, just wait and try again.
-      if (track.mode !== 'showing') {
+      if (track && track.mode !== 'showing') {
         track.mode = 'hidden';
       }
       window.setTimeout(function() {
@@ -567,10 +567,12 @@ const transcript = function (options) {
 
   });
 };
-if (videojs.registerPlugin) {
-    videojs.registerPlugin('transcript', transcript);
-}
-else {
-  videojs.plugin('transcript', transcript);
-}
 
+export default function registerPlugin(videojs){
+  if (videojs.registerPlugin) {
+      videojs.registerPlugin('transcript', transcript);
+  }
+  else {
+    videojs.plugin('transcript', transcript);
+  }
+}
