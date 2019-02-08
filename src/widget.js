@@ -93,7 +93,7 @@ var widget = function (plugin) {
     if (!track || !track.activeCues || (track.cues && track.cues.length == 0)) {
       // If cues aren't loaded, set mode to hidden, wait, and try again.
       // But don't hide an active track. In that case, just wait and try again.
-      if (track.mode !== 'showing') {
+      if (track && track.mode !== 'showing') {
         track.mode = 'hidden';
       }
       window.setTimeout(function() {
