@@ -1,6 +1,6 @@
 {
-  "name": "videojs-transcript",
-  "version": "0.8.0",
+  "name": "@packt/videojs-transcript",
+  "version": "0.9.0",
   "author": "Matthew Walsh",
   "description": "Creates interactive transcripts from text tracks.",
   "license": "MIT",
@@ -9,11 +9,15 @@
     "html5",
     "flash",
     "video",
-    "player"
+    "player",
+    "transcript"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "babel-plugin-angularjs-annotate": "0.8.2",
+    "video.js": "^7.4.1"
+  },
   "devDependencies": {
-    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-es2015": "6.24.1",
     "babelify": "^6.0.1",
     "grunt": "~0.4.1",
     "grunt-babel": "^6.0.0",
@@ -26,6 +30,6 @@
     "qunitjs": "^1.12"
   },
   "peerDependencies": {
-    "video.js": "7.5.0"
+    "video.js": "7.4.1"
   }
 }

@@ -1,10 +1,9 @@
 # Video.js Transcript
 
+Forked from: https://github.com/mediaplatform/videojs-transcript
+Original: https://github.com/walsh9/videojs-transcript
+
 Creates interactive transcripts from text tracks.
-
-## Alpha Release 3
-
-Please report any issues or feature requests on the tracker. Thank you!
 
 ## Getting Started
 
@@ -34,14 +33,14 @@ Once you've added the plugin script to your page, you can use it with any video:
 
       // Then attach the widget to the page.
       var transcriptContainer = document.querySelector('#transcript');
-      transcriptContainer.appendChild(transcript.el()); 
-    }); 
+      transcriptContainer.appendChild(transcript.el());
+    });
 </script>
 </body>
 ```
 There's also a [working example](https://walsh9.github.io/videojs-transcript/example.html) of the plugin you can check out if you're having trouble.
 
-You'll also want to include one of the css files. 
+You'll also want to include one of the css files.
 You can style the plugin as you like but there are a few examples in the /css folder to get you started.
 
 ## Documentation
