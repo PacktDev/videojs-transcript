@@ -1,9 +1,13 @@
 {
   "name": "@packt/videojs-transcript",
-  "version": "0.9.0",
-  "author": "Matthew Walsh",
+  "version": "0.9.1",
+  "author": "Packt Publishing LTD",
   "description": "Creates interactive transcripts from text tracks.",
   "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://bitbucket.org/packt-internal/videojs-transcript.git"
+  },
   "keywords": [
     "videojs",
     "html5",
