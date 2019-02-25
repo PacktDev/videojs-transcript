@@ -5,8 +5,8 @@
   "description": "Creates interactive transcripts from text tracks.",
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://bitbucket.org/packt-internal/videojs-transcript.git"
+    "type": "git",
+    "url": "https://bitbucket.org/packt-internal/videojs-transcript.git"
   },
   "keywords": [
     "videojs",

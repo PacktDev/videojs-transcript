@@ -3,13 +3,13 @@
  */
 
 // Global settings
-let my = {};
+var my = {};
 my.settings = {};
 my.prefix = 'transcript';
 my.player = this;
 
 // Defaults
-let defaults = {
+var defaults = {
   autoscroll: true,
   clickArea: 'text',
   showTitle: true,
@@ -18,4 +18,4 @@ let defaults = {
   stopScrollWhenInUse: true,
 };
 
-export {my, defaults};
+export { my, defaults };
